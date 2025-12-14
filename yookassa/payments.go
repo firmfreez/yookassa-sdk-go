@@ -8,8 +8,8 @@ import (
 	"io"
 	"net/http"
 
-	yooerror "github.com/rvinnie/yookassa-sdk-go/yookassa/errors"
-	yoopayment "github.com/rvinnie/yookassa-sdk-go/yookassa/payment"
+	yooerror "github.com/firmfreez/yookassa-sdk-go/yookassa/errors"
+	yoopayment "github.com/firmfreez/yookassa-sdk-go/yookassa/payment"
 )
 
 const (
@@ -130,9 +130,6 @@ func (p *PaymentHandler) CreatePayment(payment *yoopayment.Payment) (*yoopayment
 		return nil, err
 	}
 
-	if paymentResponse.Confirmation == nil {
-		return nil, errors.New("empty confirmation url")
-	}
 	return paymentResponse, nil
 }
 
